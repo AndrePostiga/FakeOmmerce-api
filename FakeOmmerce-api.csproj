@@ -5,5 +5,9 @@
     <RootNamespace>FakeOmmerce_api</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.11.2" />
+  </ItemGroup>
+
 
 </Project>

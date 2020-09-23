@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace FakeOmmerce_api
+namespace FakeOmmerce
 {
     public class Program
     {
