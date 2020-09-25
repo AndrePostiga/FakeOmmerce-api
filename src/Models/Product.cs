@@ -1,7 +1,7 @@
 namespace FakeOmmerce.Models
 {
   using System.Collections.Generic;
-  using System.ComponentModel.DataAnnotations;
+  using System.ComponentModel.DataAnnotations;  
   using MongoDB.Bson;
   using MongoDB.Bson.Serialization.Attributes;
 
@@ -18,10 +18,10 @@ namespace FakeOmmerce.Models
     public string Name { get; set;}
 
     [BsonElement("images")]
-    public List<string> Images { get; set; }
+    public List<string> Images;
     
     [BsonElement("categories")]
-    public List<string> Categories { get; set; }
+    public HashSet<string> Categories { get; set; }
 
     [BsonElement("price")]
     [Required]
@@ -31,5 +31,7 @@ namespace FakeOmmerce.Models
     [Required]
     [BsonElement("brand")]
     public string Brand { get; set; }
+
+
   }
 }

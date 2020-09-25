@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FakeOmmerce.Data;
+using FakeOmmerce.Errors;
 using FakeOmmerce.Models;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace FakeOmmerce.Repository
@@ -30,14 +32,22 @@ namespace FakeOmmerce.Repository
         return (page, totalPages, data);
     }
 
-    public Task<Product> FindById(string id)
-    {
-      throw new System.NotImplementedException();
+    public async Task<Product> FindById(string id)
+    {        
+        var product = await _context.Products.Find(x => x.Id == id).FirstOrDefaultAsync();
+
+        if (product == null)
+        {
+            throw new NotFoundException(id);
+        }
+
+        return product;
     }
 
-    public Task<Product> Create(Product product)
+    public async Task<Product> Create(Product product)
     {
-      throw new System.NotImplementedException();
+      await _context.Products.InsertOneAsync(product);
+      return product;
     }    
 
     public Task<Product> UpdateById(Product product)
@@ -48,6 +58,12 @@ namespace FakeOmmerce.Repository
     public Task<Product> DeleteById(string id)
     {
       throw new System.NotImplementedException();
+    }
+
+    public async Task<IEnumerable<Product>> CreateMany(IEnumerable<Product> products)
+    {
+      await _context.Products.InsertManyAsync(products);
+      return products;
     }
   }
 }

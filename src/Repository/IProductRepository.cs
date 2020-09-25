@@ -14,6 +14,8 @@ namespace FakeOmmerce.Repository
 
       Task<Product> Create(Product product);
 
+      Task<IEnumerable<Product>> CreateMany(IEnumerable<Product> products);
+
       Task<Product> UpdateById(Product product);
 
       Task<Product> DeleteById(string id);       
