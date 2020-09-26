@@ -12,4 +12,23 @@ services:
     environment: 
       MONGO_INITDB_DATABASE: ${DB_NAME}
       MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS} 
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
+
+  web_api:
+    build: .
+    container_name: web_api
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - ${SERVER_PORT}:80
+    # volumes:
+    #   - .:/usr/src/app
+    # working_dir: /usr/src/app
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+    
