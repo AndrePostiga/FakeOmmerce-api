@@ -1,10 +1,10 @@
 namespace FakeOmmerce.Errors
 {
-    using System;
+    using System.Net;
 
-    public class NotFoundException : Exception
+    public class NotFoundException : HttpError
     { 
-        public NotFoundException(string id) : base ($@"Cannot found {id} on database")
+        public NotFoundException(string id) : base ($@"Cannot found {id} on database", HttpStatusCode.NotFound)
         {
             
         }

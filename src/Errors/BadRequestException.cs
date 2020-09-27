@@ -1,10 +1,10 @@
 namespace FakeOmmerce.Errors
 {
-    using System;
+    using System.Net;
 
-    public class BadRequestException : Exception
+    public class BadRequestException : HttpError
     { 
-        public BadRequestException(string parameter) : base ($@"BadRequest {parameter} is not valid")
+        public BadRequestException(string parameter) : base ($@"BadRequest {parameter} is not valid", HttpStatusCode.BadRequest)
         {
             
         }
