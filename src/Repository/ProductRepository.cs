@@ -44,8 +44,8 @@ namespace FakeOmmerce.Repository
         return (page, totalPages, data);
     }
 
-    public async Task<Product> FindById(string id)
-    {        
+    public async Task<Product> FindById(string id) 
+    {
         var objId = isValidObjId(id);
 
         var product = await _context.Products.Find(x => x.Id.Equals(objId)).FirstOrDefaultAsync();
@@ -67,7 +67,7 @@ namespace FakeOmmerce.Repository
           throw new ConflictException(productOnDb.Name);
       }
 
-      await _context.Products.InsertOneAsync(product);
+      await _context.Products.InsertOneAsync(product);      
       return product;
     }    
 
@@ -97,7 +97,7 @@ namespace FakeOmmerce.Repository
         if (productOnDb == null)
         {
             throw new NotFoundException($@"product id : {id}");
-    }
+        }
 
         var deleteResult = await _context.Products.DeleteOneAsync(x => x.Id.Equals(objId));
         return productOnDb;

@@ -46,9 +46,13 @@ namespace FakeOmmerce.Controllers
                 var product = await _repository.FindById(id); 
                 return Ok(product); 
             }
+            catch (BadRequestException e)
+            {
+                return BadRequest(e.HttpErrorResponse);
+            }
             catch (NotFoundException e)
             {
-                return NotFound(e);
+                return NotFound(e.HttpErrorResponse);
             }
             catch (Exception)
             {
@@ -58,26 +62,26 @@ namespace FakeOmmerce.Controllers
 
         [HttpPost]
         public async Task<ActionResult<Product>> Post([FromBody]Product product)
-        {
+        {  
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }  
 
             try
-            {
+            {                
                 await _repository.Create(product);
-                return new CreatedResult("Database", product);
+                return new CreatedResult("Database", product);                
             }
             catch (ConflictException e)
             {
                 return Conflict(e.HttpErrorResponse);
             }
             catch (System.Exception)
-            {
+            {                
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
-                
+            
         }       
     
         [HttpPut]
@@ -107,7 +111,7 @@ namespace FakeOmmerce.Controllers
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
         }
-            
+
         [HttpDelete]
         [Route("{id}")]
         public async Task<ActionResult<Product>> Delete(string id)
@@ -120,7 +124,7 @@ namespace FakeOmmerce.Controllers
             catch (BadRequestException e)
             {
                 return BadRequest(e.HttpErrorResponse);
-        }  
+            }
             catch (NotFoundException e)
             {
                 return NotFound(e.HttpErrorResponse);
