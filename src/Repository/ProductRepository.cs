@@ -17,6 +17,17 @@ namespace FakeOmmerce.Repository
         _context = context;
     }
 
+    private ObjectId isValidObjId(string id)
+    {
+        bool isValid = ObjectId.TryParse(id, out ObjectId objId);
+        if (!isValid)
+        {
+            throw new BadRequestException($@"id: {id}");
+        }
+
+        return objId;
+    }
+
     public async Task<(int currentPage, int totalPages, IEnumerable<Product> data)> FindAll(int page, int pageSize)
     {
         var filter = Builders<Product>.Filter.Empty;
@@ -34,11 +45,13 @@ namespace FakeOmmerce.Repository
 
     public async Task<Product> FindById(string id)
     {        
-        var product = await _context.Products.Find(x => x.Id == id).FirstOrDefaultAsync();
+        var objId = isValidObjId(id);
+
+        var product = await _context.Products.Find(x => x.Id.Equals(objId)).FirstOrDefaultAsync();
 
         if (product == null)
         {
-            throw new NotFoundException(id);
+            throw new NotFoundException(id.ToString());
         }
 
         return product;
