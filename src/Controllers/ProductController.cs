@@ -79,8 +79,34 @@ namespace FakeOmmerce.Controllers
             }
                 
         }       
+    
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<ActionResult<Product>> Put(string id, [FromBody]Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }  
+
+            try
+            {
+                var returnedProduct = await _repository.UpdateById(id, product);
+                return Ok(returnedProduct);
+            }
+            catch (BadRequestException e)
+            {
+                return BadRequest(e.HttpErrorResponse);
+            }
+            catch (NotFoundException e)
+            {
+                return NotFound(e.HttpErrorResponse);
+            }
+            catch (Exception)
+            {
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
+        }
             
         }  
 

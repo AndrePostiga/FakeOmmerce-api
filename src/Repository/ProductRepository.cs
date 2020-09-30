@@ -70,9 +70,22 @@ namespace FakeOmmerce.Repository
       return product;
     }    
 
-    public Task<Product> UpdateById(Product product)
+    public async Task<Product> UpdateById(string id, Product product)
     {
-      throw new System.NotImplementedException();
+      isValidObjId(id);
+      await this.FindById(id);
+      
+      var filter = Builders<Product>.Filter.Eq(x => x.Id, id);
+      var update = Builders<Product>.Update
+        .Set(x => x.Name, product.Name)
+        .Set(x => x.Images, product.Images)
+        .Set(x => x.Price, product.Price)
+        .Set(x => x.Brand, product.Brand)
+        .Set(x => x.Description, product.Description)
+        .Set(x => x.Categories, product.Categories)
+        .Set(x => x.Images, product.Images);
+      var updatedProduct = await _context.Products.UpdateOneAsync(filter, update, new UpdateOptions {IsUpsert = false});      
+      return product;
     }
 
     public Task<Product> DeleteById(string id)
