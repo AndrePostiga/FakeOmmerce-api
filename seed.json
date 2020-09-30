@@ -16,7 +16,8 @@
       "Amortecimento"
     ],
     "price" : 199.99,
-    "brand" : "Nike"    
+    "brand" : "Nike",
+    "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto. Confeccionado em material respirável, esse tênis para correr possui reforço no calcanhar para proteger contra possíveis torções e fechamento dinâmico, garantindo um ajuste personalizado. Aposte na Nike para te acompanhar nos seus desafios dentro do esporte!"     
   },
   {
     "_id": {
@@ -33,7 +34,8 @@
       "Esportes"
     ],
     "price" : 139.99,
-    "brand" : "Yangfit"    
+    "brand" : "Yangfit",
+    "description": ""         
   },
   {
     "_id": {
@@ -51,7 +53,8 @@
       "Locomoção"
     ],
     "price" : 1059.00,
-    "brand" : "South"    
+    "brand" : "South",
+    "description": "Distribuído por: Southbike. Bicicleta South Hunter GT - Aro 29 - Freios a Disco - 21 Marchas - Aço. Informações Técnicas:. Modelo: Hunter GT. Gênero: Unissex. Quadro Hunter GT 29 em aço Tamanho 17. Aro Aero 29 Alumínio (parede dupla). Cubo Dianteiro/Traseiro 36F para Freio a Disco preto Importado. Câmara de Ar 29 Importada. Pneu 29x1.95 de preto Importado. Selim MTB Southbike. Canote de Selim. Pedivela Aço com Engrenagem Tripla encapada. Alavanca Grip Shift 21 velocidades Importada. Suporte de Guidão Aço ahead set preto. Guidão Aço 680mm MTB. Roda Livre 7 Velocidades Index. Câmbio Dianteiro 3V. Câmbio Traseiro 7V. Corrente fina Index Importada. Pedal plataforma de nylon Importado. Garfo de suspensão 29 Over em aço preto Importado. Freio a disco dianteiro e traseiro mecânico Importado. Garantia: 03 meses contra defeito de fabricação. País de Origem Brasil." 
   }
 ]
 
