@@ -3,6 +3,7 @@ include .env
 .PHONY: up
 
 up:
+	docker-compose build
 	docker-compose -f docker-compose.yml up -d
 	docker exec db mongoimport --host ${DB_HOST} --username ${DB_USER} --password ${DB_PASS} --authenticationDatabase admin -d ${DB_NAME} -c products --type json --file /seed.json --jsonArray
 
@@ -16,4 +17,6 @@ down:
 logs:
 	docker-compose logs -f
 
-.PHONY: tests
+.PHONY: rst
+
+rst: down up logs
