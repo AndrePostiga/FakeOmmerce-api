@@ -30,15 +30,10 @@ namespace FakeOmmerce.Models
     [BsonElement("images")]
     public List<string> Images { get; set; }
     
-    [BsonElement("categories")]
-    public HashSet<string> Categories { get; set; }
-
     [BsonElement("price")]
     [Required]
-    [Range(0.1, int.MaxValue, ErrorMessage = "Prime must be higher than 0.0")]
     public double Price { get; set; }
 
-    [Required]
     [BsonElement("brand")]
     [Required]
     public string Brand { get; set; }
