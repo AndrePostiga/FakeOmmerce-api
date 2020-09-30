@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using FakeOmmerce.Data;
 using FakeOmmerce.Errors;
 using FakeOmmerce.Models;
+using Microsoft.AspNetCore.Http;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -88,15 +89,19 @@ namespace FakeOmmerce.Repository
       return product;
     }
 
-    public Task<Product> DeleteById(string id)
+    public async Task<Product> DeleteById(string id)
     {
-      throw new System.NotImplementedException();
+        var objId = isValidObjId(id);
+
+        var productOnDb = await _context.Products.Find(x => x.Id.Equals(objId)).FirstOrDefaultAsync();      
+        if (productOnDb == null)
+        {
+            throw new NotFoundException($@"product id : {id}");
     }
 
-    public async Task<IEnumerable<Product>> CreateMany(IEnumerable<Product> products)
-    {
-      await _context.Products.InsertManyAsync(products);
-      return products;
+        var deleteResult = await _context.Products.DeleteOneAsync(x => x.Id.Equals(objId));
+        return productOnDb;
     }
+
   }
 }

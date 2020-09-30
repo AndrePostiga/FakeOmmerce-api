@@ -108,14 +108,27 @@ namespace FakeOmmerce.Controllers
             }
         }
             
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<ActionResult<Product>> Delete(string id)
+        {
+            try
+            {
+                var product = await _repository.DeleteById(id); 
+                return Ok(product); 
+            }
+            catch (BadRequestException e)
+            {
+                return BadRequest(e.HttpErrorResponse);
         }  
-
-        // [HttpPost]
-        // [Route("many")]
-        // public async Task<ActionResult<IEnumerable<Product>>> CreateMany([FromBody]IEnumerable<Product> products)
-        // {
-        //     await _repository.CreateMany(products);
-        //     return new CreatedResult("Database", products);
-        // }       
+            catch (NotFoundException e)
+            {
+                return NotFound(e.HttpErrorResponse);
+            }
+            catch (Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }
