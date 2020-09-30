@@ -59,6 +59,13 @@ namespace FakeOmmerce.Repository
 
     public async Task<Product> Create(Product product)
     {
+      
+      var productOnDb = await _context.Products.Find(x => x.Name == product.Name).FirstOrDefaultAsync();      
+      if (productOnDb != null)
+      {
+          throw new ConflictException(productOnDb.Name);
+      }
+
       await _context.Products.InsertOneAsync(product);
       return product;
     }    
