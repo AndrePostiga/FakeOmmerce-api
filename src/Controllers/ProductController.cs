@@ -69,9 +69,16 @@ namespace FakeOmmerce.Controllers
                 await _repository.Create(product);
                 return new CreatedResult("Database", product);
             }
+            catch (ConflictException e)
+            {
+                return Conflict(e.HttpErrorResponse);
+            }
             catch (System.Exception)
             {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
                 
+        }       
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
             
