@@ -29,9 +29,9 @@ namespace FakeOmmerce.Repository
         return objId;
     }
 
-    public async Task<(int currentPage, int totalPages, IEnumerable<Product> data)> FindAll(int page, int pageSize)
+    public async Task<(int currentPage, int totalPages, IEnumerable<Product> data)> FindAll(int page, int pageSize, FilterParameters filters)
     {
-        var filter = Builders<Product>.Filter.Empty;
+        var filter = filters.makeFilters();    
 
         var data = await _context.Products.Find(filter)
             .Skip((page - 1) * pageSize)
@@ -74,19 +74,20 @@ namespace FakeOmmerce.Repository
     public async Task<Product> UpdateById(string id, Product product)
     {
       isValidObjId(id);
-      await this.FindById(id);
+      var productInDb = await this.FindById(id);
       
       var filter = Builders<Product>.Filter.Eq(x => x.Id, id);
       var update = Builders<Product>.Update
-        .Set(x => x.Name, product.Name)
-        .Set(x => x.Images, product.Images)
-        .Set(x => x.Price, product.Price)
-        .Set(x => x.Brand, product.Brand)
-        .Set(x => x.Description, product.Description)
-        .Set(x => x.Categories, product.Categories)
-        .Set(x => x.Images, product.Images);
-      var updatedProduct = await _context.Products.UpdateOneAsync(filter, update, new UpdateOptions {IsUpsert = false});      
-      return product;
+        .Set(x => x.Name, product.Name == null ? productInDb.Name : product.Name )
+        .Set(x => x.Images, product.Images == null ? productInDb.Images : product.Images)
+        .Set(x => x.Price, product.Price == null ? productInDb.Price : product.Price)
+        .Set(x => x.Brand, product.Brand == null ? productInDb.Brand : product.Brand)
+        .Set(x => x.Description, product.Description == null ? productInDb.Description : product.Description)
+        .Set(x => x.Categories, product.Categories == null ? productInDb.Categories : product.Categories);        
+      await _context.Products.UpdateOneAsync(filter, update, new UpdateOptions {IsUpsert = false});    
+      
+      var updatedProduct = await this.FindById(id);
+      return updatedProduct;
     }
 
     public async Task<Product> DeleteById(string id)

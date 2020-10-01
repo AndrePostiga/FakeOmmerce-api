@@ -9,7 +9,7 @@ namespace FakeOmmerce.Repository
 
   public interface IProductRepository
     {
-      Task<(int currentPage, int totalPages, IEnumerable<Product> data)> FindAll(int page, int pageSize);       
+      Task<(int currentPage, int totalPages, IEnumerable<Product> data)> FindAll(int page, int pageSize, FilterParameters filters);       
 
       Task<Product> FindById(string id);
 

@@ -22,11 +22,27 @@ namespace FakeOmmerce.Controllers
         }
 
         [HttpGet]        
-        public async Task<ActionResult<(int currentPage, int totalPages, IEnumerable<Product> Products)>> Get([FromQuery]int page = 1, [FromQuery]int pageSize = 10)
+        public async Task<ActionResult<(int currentPage, int totalPages, IEnumerable<Product> Products)>> Get(            
+            [FromQuery]string brand,            
+            [FromQuery]string name,
+            [FromQuery]List<string>? categories = null,                        
+            [FromQuery]double priceGreatherThen = 1,
+            [FromQuery]double priceLowerThen = 99999999,
+            [FromQuery]int page = 1, 
+            [FromQuery]int pageSize = 10           
+        )
         {
+            var filters = new FilterParameters(
+                categories,                
+                brand ?? "",
+                name ?? "",
+                priceGreatherThen,
+                priceLowerThen
+            );
+
             try
             {
-                var products = await _repository.FindAll(page, pageSize);            
+                var products = await _repository.FindAll(page, pageSize, filters);            
                 return Ok(new {products.currentPage, products.totalPages, products.data});
             }
             catch (System.Exception)
