@@ -24,8 +24,7 @@ namespace FakeOmmerce.Models
         public FilterParameters()
         { }
 
-        public FilterDefinition<Product> makeFilters() {
-            var categoriesFieldDefinition = new ExpressionFieldDefinition<Product, List<string>>(x => x.Categories);
+        public FilterDefinition<Product> makeFilters() {           
 
             var filter = 
                 Builders<Product>.Filter.Where(x => x.Name.ToLower().Contains(_name))
