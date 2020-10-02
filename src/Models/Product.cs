@@ -10,48 +10,66 @@ namespace FakeOmmerce.Models
   public class Product
   {
 
-    // private ObjectId id;
-    // private string name;    
-    // private List<string> images;    
-    // private List<string> categories;
-    // private double price;
-    // private string brand;
-    // private string description;
+    private ObjectId id;
+    private string name;    
+    private List<string> images;    
+    private List<string> categories;
+    private double price;
+    private string brand;
+    private string description;
 
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
-    [BsonElement("id")]
-    public string Id { get; set; }
+    // [BsonId]
+    // [BsonRepresentation(BsonType.ObjectId)]
+    // [BsonElement("id")]
+    public ObjectId Id { get => id; set => id = value; }
 
-    [BsonElement("name")]
+    // [BsonElement("name")]
+    
+    public string Name { get => name; set => name = value.ToUpper(); }
+
+    // [BsonElement("images")]
+    public List<string> Images { get => images; set => images = value; }
+
+    // [BsonElement("price")]
     [Required]
-    [MaxLength(60)]
-    [MinLength(3)] 
-    public string Name { get; set; }
+    public double Price { get => price; set => price = value; }
 
-    [BsonElement("images")]
-    public List<string> Images { get; set; }
-
-    [BsonElement("price")]
+    // [BsonElement("brand")]
     [Required]
-    public double Price { get; set; }
+    public string Brand { get => brand; set => brand = value; }
 
-    [BsonElement("brand")]
+    // [BsonElement("description")]
+    public string Description { get => description; set => description = value; }
+
+    // [BsonElement("categories")]
     [Required]
-    public string Brand { get; set; }
-
-    [BsonElement("description")]
-    public string Description { get; set; }
-
-    [BsonElement("categories")]
-    [Required]
-    public List<string> Categories { get; set; }   
+    public List<string> Categories { 
+      get => categories; 
+      set 
+      {
+        var result = isValidCategories(value);
+        if (!result)
+        {
+            throw new System.Exception("Algoasdasdasd");
+        }
+        System.Console.WriteLine(result);
+        categories = value;
+      }
+    }   
 
     public Product()
     { }
 
-    public Product(string name, List<string> images, List<string> categories, double price, string brand, string description)
+    public Product(ObjectId id, string name, List<string> images, List<string> categories, double price, string brand, string description)
     {
+      // this.name = name;
+      // this.images = images;
+      // this.categories = categories;
+      // this.price = price;
+      // this.brand = brand;
+      // this.description = description;
+
+      Id = id;
       Name = name;
       Images = images;
       Categories = categories;
@@ -66,18 +84,15 @@ namespace FakeOmmerce.Models
       return this.Name == product.Name;
     }
 
-    private bool validate(List<string> images, List<string> categories)
-    {
-        return isValidCategories(categories) && isValidImages(images);
-    }
-
     private bool isValidCategories(List<string> categoryName)
     {
       foreach (var item in categoryName)
       {
+        System.Console.WriteLine(item);
         if (item.Any(char.IsDigit))
         {
-          throw new System.Exception($@"{item} is not an valid category name");
+          //throw new System.Exception($@"{item} is not an valid category name");
+          return false;
         }
       }
       return true;

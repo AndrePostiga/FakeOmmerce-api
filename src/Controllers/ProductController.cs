@@ -82,7 +82,19 @@ namespace FakeOmmerce.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }  
+            }     
+
+            product.Id = ObjectId.GenerateNewId();         
+
+            System.Console.WriteLine($@"
+                id : {product.Id}
+                name : {product.Name}
+                images : {product.Images}
+                categories: {product.Categories}
+                brand : {product.Brand}
+                price : {product.Price}
+                description : {product.Description}
+            ");
 
             try
             {                
@@ -108,6 +120,15 @@ namespace FakeOmmerce.Controllers
             {
                 return BadRequest(ModelState);
             }  
+
+            System.Console.WriteLine($@"
+                name : {product.Name}
+                images : {product.Images}
+                categories: {product.Categories}
+                brand : {product.Brand}
+                price : {product.Price}
+                description : {product.Description}
+            ");
 
             try
             {

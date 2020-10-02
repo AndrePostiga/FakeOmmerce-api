@@ -73,10 +73,10 @@ namespace FakeOmmerce.Repository
 
     public async Task<Product> UpdateById(string id, Product product)
     {
-      isValidObjId(id);
+      var objId = isValidObjId(id);
       var productInDb = await this.FindById(id);
       
-      var filter = Builders<Product>.Filter.Eq(x => x.Id, id);
+      var filter = Builders<Product>.Filter.Eq(x => x.Id, objId);
       var update = Builders<Product>.Update
         .Set(x => x.Name, product.Name == null ? productInDb.Name : product.Name )
         .Set(x => x.Images, product.Images == null ? productInDb.Images : product.Images)
