@@ -25,7 +25,7 @@ namespace FakeOmmerce.Controllers
         public async Task<ActionResult<(int currentPage, int totalPages, IEnumerable<Product> Products)>> Get(
             [FromQuery] string brand,
             [FromQuery] string name,
-            [FromQuery] List<string>? categories = null,
+            [FromQuery] List<string> categories = null,
             [FromQuery] double priceGreatherThen = 1,
             [FromQuery] double priceLowerThen = 99999999,
             [FromQuery] int page = 1,
@@ -59,7 +59,8 @@ namespace FakeOmmerce.Controllers
         {
             try
             {
-                var product = await _repository.FindById(id);
+                var objId = MongoEntity.ValidateAndParseObjId(id);
+                var product = await _repository.FindById(objId);
                 return Ok(product);
             }
             catch (BadRequestException e)
@@ -77,41 +78,16 @@ namespace FakeOmmerce.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Product>> Post([FromBody]ProductDTO dto)
-        {        
+        public async Task<ActionResult<Product>> Post([FromBody] ProductDTO dto)
+        {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-
             try
             {
-
-                var product = new Product()
-                {
-                    Id = ObjectId.GenerateNewId(),
-                    Name = dto.Name,
-                    Brand = dto.Brand,
-                    Categories = new HashSet<string>(dto.Categories),
-                    Description = dto.Description,
-                    Images = new HashSet<string>(dto.Images),
-                    Price = dto.Price
-                };
-
-
-
-                System.Console.WriteLine($@"
-                    id : {product.Id}
-                    name : {product.Name}
-                    images : {product.Images}
-                    categories: {product.Categories}
-                    brand : {product.Brand}
-                    price : {product.Price}
-                    description : {product.Description}
-                ");
-
-
+                var product = new Product(dto);
                 await _repository.Create(product);
                 return new CreatedResult("Database", product);
             }
@@ -136,25 +112,18 @@ namespace FakeOmmerce.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public async Task<ActionResult<Product>> Put(string id, [FromBody] Product product)
+        public async Task<ActionResult<Product>> Put(string id, [FromBody] ProductDTO dto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            System.Console.WriteLine($@"
-                name : {product.Name}
-                images : {product.Images}
-                categories: {product.Categories}
-                brand : {product.Brand}
-                price : {product.Price}
-                description : {product.Description}
-            ");
-
             try
             {
-                var returnedProduct = await _repository.UpdateById(id, product);
+                var objId = MongoEntity.ValidateAndParseObjId(id);
+                var product = new Product(objId, dto);
+                var returnedProduct = await _repository.UpdateById(product);
                 return Ok(returnedProduct);
             }
             catch (BadRequestException e)
@@ -177,7 +146,8 @@ namespace FakeOmmerce.Controllers
         {
             try
             {
-                var product = await _repository.DeleteById(id);
+                var objId = MongoEntity.ValidateAndParseObjId(id);
+                var product = await _repository.DeleteById(objId);
                 return Ok(product);
             }
             catch (BadRequestException e)

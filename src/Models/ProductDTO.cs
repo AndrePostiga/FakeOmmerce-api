@@ -5,6 +5,8 @@ namespace FakeOmmerce.Models
 
 	public class ProductDTO
 	{
+		public string Id { get; set; }
+
 		[Required]
 		public string Name { get; set; }
 		
@@ -20,6 +22,5 @@ namespace FakeOmmerce.Models
 		public List<string> Categories { get; set; }
 
 		public List<string> Images { get; set; }
-
 	}
 }

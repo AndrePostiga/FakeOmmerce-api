@@ -8,22 +8,16 @@ namespace FakeOmmerce.Models
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization.Attributes;
 
-    public class Product
-    {
-
-        private ObjectId id;
+    public class Product : MongoEntity
+    {        
         private string name;
         private HashSet<string> images;
         private HashSet<string> categories;
         private double price;
         private string brand;
         private string description;
-
-        public ObjectId Id { get => id; set => id = value; }
-
 		
         public string Name { get => name; set => name = capitalizeStrings(value); }        
-
 		
         public double Price { 
 			get => price; 
@@ -37,7 +31,6 @@ namespace FakeOmmerce.Models
 				price = value;
 			}
 		}
-		
 		
         public string Brand { get => brand; set => brand = capitalizeStrings(value); }
 
@@ -57,8 +50,7 @@ namespace FakeOmmerce.Models
 			}
 			
 		}
-
-		
+	
         public HashSet<string> Categories
         {
             get => categories;
@@ -79,30 +71,52 @@ namespace FakeOmmerce.Models
             }
         }
 
-        public Product()
+        public Product() : base()
         { }
 
-        public Product(ObjectId id, string name, HashSet<string> images, HashSet<string> categories, double price, string brand, string description)
+        public Product(
+            ObjectId id, 
+            string name, 
+            HashSet<string> images, 
+            HashSet<string> categories, 
+            double price, 
+            string brand, 
+            string description
+        )   : base(id)            
         {
-            Id = id;
-            Name = name;
-            Images = images;
-            Categories = categories;
-            Price = price;
-            Brand = brand;
-            Description = description;
+            this.name = name;
+            this.images = images;
+            this.categories = categories;
+            this.price = price;
+            this.brand = brand;
+            this.description = description;
         }
 
-        public override bool Equals(object obj)
+        public Product(ProductDTO dto) : base(ObjectId.GenerateNewId())
         {
-            var product = (Product)obj;
-            return this.Name == product.Name;
+            Name = dto.Name;
+            Brand = dto.Brand;
+            Categories = new HashSet<string>(dto.Categories);
+            Description = dto.Description;
+            Images = dto.Images != null ? new HashSet<string>(dto.Images) : new HashSet<string>();
+            Price = dto.Price;
         }
+
+        public Product(ObjectId id, ProductDTO dto) : base (id)
+        {         
+            Name = dto.Name;
+            Brand = dto.Brand;
+            Categories = new HashSet<string>(dto.Categories);
+            Description = dto.Description;
+            Images = dto.Images != null ? new HashSet<string>(dto.Images) : new HashSet<string>();
+            Price = dto.Price;
+        }
+
+        
         private bool isValidCategories(HashSet<string> categoryName)
         {
             foreach (var item in categoryName)
-            {
-                System.Console.WriteLine(item);
+            {                
                 if (item.Any(char.IsDigit))
                 {
                     return false;
@@ -111,7 +125,12 @@ namespace FakeOmmerce.Models
             return true;
         }
         private bool isValidImages(HashSet<string> imagesUrls)
-        {
+        {            
+            if (imagesUrls.Count == 0)
+            {
+                return true;
+            }
+
             foreach (var url in imagesUrls)
             {
                 var request = HttpWebRequest.Create(url);
@@ -170,6 +189,16 @@ namespace FakeOmmerce.Models
                 }
             }
             return new string(array);
+        }
+        
+        public override bool Equals(object obj)
+        {
+            var product = (Product)obj;
+            return this.Name == product.Name;
+        }
+        public override int GetHashCode()
+        {
+            return name.GetHashCode();
         }
     }
 }

@@ -24,16 +24,21 @@ namespace FakeOmmerce
         {
             var config = new ServerConfig();
             Configuration.Bind(config);
+
+            BsonClassMap.RegisterClassMap<MongoEntity>(cm => {
+                cm.MapIdField(c => c.InternalId).SetElementName("id");
+                cm.MapCreator(m => new MongoEntity(m.InternalId));
+            });
             
             BsonClassMap.RegisterClassMap<Product>(cm => {
-                cm.MapIdField(c => c.Id).SetElementName("id");
+                //cm.MapIdField(c => c.InternalId).SetElementName("id");
                 cm.MapField(c => c.Name).SetElementName("name");
                 cm.MapField(c => c.Brand).SetElementName("brand");
                 cm.MapField(c => c.Categories).SetElementName("categories");
                 cm.MapField(c => c.Images).SetElementName("images");
                 cm.MapField(c => c.Price).SetElementName("price");
                 cm.MapField(c => c.Description).SetElementName("description");       
-                cm.MapCreator( p => new Product(p.Id, p.Name, p.Images, p.Categories, p.Price, p.Brand, p.Description));         
+                cm.MapCreator( p => new Product(p.InternalId, p.Name, p.Images, p.Categories, p.Price, p.Brand, p.Description));         
             });
 
             

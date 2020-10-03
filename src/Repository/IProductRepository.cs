@@ -11,14 +11,12 @@ namespace FakeOmmerce.Repository
     {
       Task<(int currentPage, int totalPages, IEnumerable<Product> data)> FindAll(int page, int pageSize, FilterParameters filters);       
 
-      Task<Product> FindById(string id);
+      Task<Product> FindById(ObjectId id);
 
-      Task<Product> Create(Product product);
+      Task<Product> Create(Product product);     
 
-      // Task<IEnumerable<Product>> CreateMany(IEnumerable<Product> products);
+      Task<Product> UpdateById(Product product);
 
-      Task<Product> UpdateById(string id, Product product);
-
-      Task<Product> DeleteById(string id);       
+      Task<Product> DeleteById(ObjectId id);       
     }
 }

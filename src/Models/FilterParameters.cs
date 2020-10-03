@@ -3,8 +3,9 @@ namespace FakeOmmerce.Models
     using System.Collections.Generic;
     using MongoDB.Driver;
     using System.Linq;
+    using MongoDB.Bson;
 
-  public class FilterParameters
+    public class FilterParameters
     {
         private List<string> _categories;
         private double _priceGreatherThen;
@@ -27,14 +28,14 @@ namespace FakeOmmerce.Models
         public FilterDefinition<Product> makeFilters() {           
 
             var filter = 
-                Builders<Product>.Filter.Where(x => x.Name.ToLower().Contains(_name))
-                & Builders<Product>.Filter.Gte(x => x.Price, _priceGreatherThen)
-                & Builders<Product>.Filter.Lte(x => x.Price, _priceLowerThen)
-                & Builders<Product>.Filter.Where(x => x.Brand.ToLower().Contains(_brand));
+                Builders<Product>.Filter.Where(p => p.Name.ToLower().Contains(_name))
+                & Builders<Product>.Filter.Gte(p => p.Price, _priceGreatherThen)
+                & Builders<Product>.Filter.Lte(p => p.Price, _priceLowerThen)
+                & Builders<Product>.Filter.Where(p => p.Brand.ToLower().Contains(_brand));
 
             if (_categories.Count > 0)
             {
-                filter &= Builders<Product>.Filter.AnyIn(x => x.Categories, _categories);
+                filter &= Builders<Product>.Filter.AnyIn(p => p.Categories, _categories);                       
             }                
  
             return filter;

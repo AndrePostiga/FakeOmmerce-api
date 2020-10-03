@@ -3,3 +3,5 @@ https://gist.github.com/a3dho3yn/91dcc7e6f606eaefaf045fc193d3dcc3
 https://www.dotnetperls.com/uppercase-first-letter
 https://stackoverflow.com/questions/11945201/how-to-get-content-type-of-a-web-address
 http://www.macoratti.net/18/03/lnq_mapred1.htm
+https://stackoverflow.com/questions/5744430/c-sharp-mongodb-how-to-correctly-map-a-domain-object
+https://mongodb.github.io/mongo-csharp-driver/2.10/reference/bson/mapping/
