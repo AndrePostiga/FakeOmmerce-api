@@ -4,9 +4,9 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /app
-COPY ["FakeOmmerce-api.csproj", "./"]
+COPY ["FakeOmmerceAPI/FakeOmmerce-api.csproj", "./"]
 RUN dotnet restore "./FakeOmmerce-api.csproj"
-COPY . /app
+COPY /FakeOmmerceAPI /app
 WORKDIR /app
 RUN dotnet build "FakeOmmerce-api.csproj" -c Release -o app
 
