@@ -212,41 +212,41 @@ FNH:0
 end_of_record
 SF:/home/andrepostiga/MyProjects/FakeOmmerce-api/FakeOmmerceAPI/src/Models/FilterParameters.cs
 FN:27,MongoDB.Driver.FilterDefinition`1<FakeOmmerce.Models.Product> FakeOmmerce.Models.FilterParameters::makeFilters()
-FNDA:0,MongoDB.Driver.FilterDefinition`1<FakeOmmerce.Models.Product> FakeOmmerce.Models.FilterParameters::makeFilters()
-DA:28,0
-DA:30,0
-DA:31,0
-DA:32,0
-DA:33,0
-DA:34,0
-DA:36,0
-DA:37,0
-DA:38,0
-DA:39,0
-DA:41,0
-DA:42,0
-BRDA:36,483,0,0
-BRDA:36,483,1,0
+FNDA:1,MongoDB.Driver.FilterDefinition`1<FakeOmmerce.Models.Product> FakeOmmerce.Models.FilterParameters::makeFilters()
+DA:28,1
+DA:30,1
+DA:31,1
+DA:32,1
+DA:33,1
+DA:34,1
+DA:36,1
+DA:37,1
+DA:38,1
+DA:39,1
+DA:41,1
+DA:42,1
+BRDA:36,483,0,1
+BRDA:36,483,1,1
 FN:15,System.Void FakeOmmerce.Models.FilterParameters::.ctor(System.Collections.Generic.List`1<System.String>,System.String,System.String,System.Double,System.Double)
-FNDA:0,System.Void FakeOmmerce.Models.FilterParameters::.ctor(System.Collections.Generic.List`1<System.String>,System.String,System.String,System.Double,System.Double)
-DA:16,0
-DA:17,0
-DA:18,0
-DA:19,0
-DA:20,0
-DA:21,0
-DA:22,0
-DA:23,0
+FNDA:2,System.Void FakeOmmerce.Models.FilterParameters::.ctor(System.Collections.Generic.List`1<System.String>,System.String,System.String,System.Double,System.Double)
+DA:16,2
+DA:17,2
+DA:18,2
+DA:19,2
+DA:20,2
+DA:21,2
+DA:22,2
+DA:23,2
 FN:24,System.Void FakeOmmerce.Models.FilterParameters::.ctor()
-FNDA:0,System.Void FakeOmmerce.Models.FilterParameters::.ctor()
-DA:25,0
-DA:26,0
+FNDA:1,System.Void FakeOmmerce.Models.FilterParameters::.ctor()
+DA:25,1
+DA:26,2
 LF:22
-LH:0
+LH:22
 BRF:2
-BRH:0
+BRH:2
 FNF:3
-FNH:0
+FNH:3
 end_of_record
 SF:/home/andrepostiga/MyProjects/FakeOmmerce-api/FakeOmmerceAPI/src/Models/MongoEntity.cs
 FN:14,MongoDB.Bson.ObjectId FakeOmmerce.Models.MongoEntity::get_InternalId()
@@ -521,32 +521,32 @@ FNH:18
 end_of_record
 SF:/home/andrepostiga/MyProjects/FakeOmmerce-api/FakeOmmerceAPI/src/Models/ProductDTO.cs
 FN:7,System.String FakeOmmerce.Models.ProductDTO::get_Id()
-FNDA:0,System.String FakeOmmerce.Models.ProductDTO::get_Id()
-DA:8,0
+FNDA:2,System.String FakeOmmerce.Models.ProductDTO::get_Id()
+DA:8,2
 FN:10,System.String FakeOmmerce.Models.ProductDTO::get_Name()
-FNDA:8,System.String FakeOmmerce.Models.ProductDTO::get_Name()
-DA:11,8
+FNDA:10,System.String FakeOmmerce.Models.ProductDTO::get_Name()
+DA:11,10
 FN:13,System.Double FakeOmmerce.Models.ProductDTO::get_Price()
-FNDA:8,System.Double FakeOmmerce.Models.ProductDTO::get_Price()
-DA:14,8
+FNDA:10,System.Double FakeOmmerce.Models.ProductDTO::get_Price()
+DA:14,10
 FN:16,System.String FakeOmmerce.Models.ProductDTO::get_Brand()
-FNDA:8,System.String FakeOmmerce.Models.ProductDTO::get_Brand()
-DA:17,8
+FNDA:10,System.String FakeOmmerce.Models.ProductDTO::get_Brand()
+DA:17,10
 FN:18,System.String FakeOmmerce.Models.ProductDTO::get_Description()
-FNDA:8,System.String FakeOmmerce.Models.ProductDTO::get_Description()
-DA:19,8
+FNDA:10,System.String FakeOmmerce.Models.ProductDTO::get_Description()
+DA:19,10
 FN:21,System.Collections.Generic.List`1<System.String> FakeOmmerce.Models.ProductDTO::get_Categories()
-FNDA:8,System.Collections.Generic.List`1<System.String> FakeOmmerce.Models.ProductDTO::get_Categories()
-DA:22,8
+FNDA:10,System.Collections.Generic.List`1<System.String> FakeOmmerce.Models.ProductDTO::get_Categories()
+DA:22,10
 FN:23,System.Collections.Generic.List`1<System.String> FakeOmmerce.Models.ProductDTO::get_Images()
-FNDA:11,System.Collections.Generic.List`1<System.String> FakeOmmerce.Models.ProductDTO::get_Images()
-DA:24,11
+FNDA:13,System.Collections.Generic.List`1<System.String> FakeOmmerce.Models.ProductDTO::get_Images()
+DA:24,13
 LF:7
-LH:6
+LH:7
 BRF:0
 BRH:0
 FNF:7
-FNH:6
+FNH:7
 end_of_record
 SF:/home/andrepostiga/MyProjects/FakeOmmerce-api/FakeOmmerceAPI/src/Errors/BadRequestException.cs
 FN:6,System.Void FakeOmmerce.Errors.BadRequestException::.ctor(System.String)
