@@ -6,3 +6,6 @@ http://www.macoratti.net/18/03/lnq_mapred1.htm
 https://stackoverflow.com/questions/5744430/c-sharp-mongodb-how-to-correctly-map-a-domain-object
 https://mongodb.github.io/mongo-csharp-driver/2.10/reference/bson/mapping/
 https://xunit.github.io/
+https://stackoverflow.com/questions/41958510/how-to-run-all-tests-in-visual-studio-code
+https://stackoverflow.com/questions/11135337/xunit-assertion-for-checking-equality-of-objects
+https://medium.com/@lorranpalmeira/code-coverage-no-c-com-vscode-cfa3cb6c89d0
