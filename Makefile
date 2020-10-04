@@ -20,3 +20,8 @@ logs:
 .PHONY: rst
 
 rst: down up logs
+
+.PHONY: tests
+
+tests:
+	dotnet test ./FakeOmmerceTests/FakeOmmerceTests.csproj /p:CollectCoverage=true

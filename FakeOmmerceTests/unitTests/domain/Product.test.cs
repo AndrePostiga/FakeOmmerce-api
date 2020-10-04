@@ -278,6 +278,7 @@ namespace FakeOmmerceTests.Domain
             );
 
             Assert.IsType<Product>(sut);
+            Assert.IsAssignableFrom<MongoEntity>(sut);
             Assert.Equal(sut.InternalId, objId);
             Assert.Equal(sut.Name, "Any Name");
             Assert.Equal(sut.Images, new HashSet<string>() {"https://static.netshoes.com.br/produtos/tenis-nike-revolution-5-masculino/09/HZM-1731-309/HZM-1731-309_zoom1.jpg?ts=1584658433&"});
@@ -301,7 +302,8 @@ namespace FakeOmmerceTests.Domain
 
             Product sut = new Product(dto);
 
-            Assert.IsType<Product>(sut);            
+            Assert.IsType<Product>(sut);      
+            Assert.IsAssignableFrom<MongoEntity>(sut);      
             Assert.Equal(sut.Name, "Any Name");
             Assert.Equal(sut.Images, new HashSet<string>() {"https://static.netshoes.com.br/produtos/tenis-nike-revolution-5-masculino/09/HZM-1731-309/HZM-1731-309_zoom1.jpg?ts=1584658433&"});
             Assert.Equal(sut.Categories, new HashSet<string>() {"Any Category"});
@@ -324,7 +326,8 @@ namespace FakeOmmerceTests.Domain
 
             Product sut = new Product(dto);
 
-            Assert.IsType<Product>(sut);            
+            Assert.IsType<Product>(sut); 
+            Assert.IsAssignableFrom<MongoEntity>(sut);           
             Assert.Equal(sut.Name, "Any Name");
             Assert.Equal(sut.Images, new HashSet<string>());
             Assert.Equal(sut.Categories, new HashSet<string>() {"Any Category"});
@@ -350,6 +353,7 @@ namespace FakeOmmerceTests.Domain
             Product sut = new Product(objId, dto);
 
             Assert.IsType<Product>(sut);
+            Assert.IsAssignableFrom<MongoEntity>(sut);
             Assert.Equal(sut.InternalId, objId);
             Assert.Equal(sut.Name, "Any Name");
             Assert.Equal(sut.Images, new HashSet<string>() {"https://static.netshoes.com.br/produtos/tenis-nike-revolution-5-masculino/09/HZM-1731-309/HZM-1731-309_zoom1.jpg?ts=1584658433&"});
@@ -376,6 +380,7 @@ namespace FakeOmmerceTests.Domain
             Product sut = new Product(objId, dto);
 
             Assert.IsType<Product>(sut);
+            Assert.IsAssignableFrom<MongoEntity>(sut);
             Assert.Equal(sut.InternalId, objId);
             Assert.Equal(sut.Name, "Any Name");
             Assert.Equal(sut.Images, new HashSet<string>());

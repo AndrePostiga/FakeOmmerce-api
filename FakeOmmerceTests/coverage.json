@@ -437,18 +437,18 @@
       "FakeOmmerce.Models.FilterParameters": {
         "MongoDB.Driver.FilterDefinition`1<FakeOmmerce.Models.Product> FakeOmmerce.Models.FilterParameters::makeFilters()": {
           "Lines": {
-            "28": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "41": 0,
-            "42": 0
+            "28": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "41": 1,
+            "42": 1
           },
           "Branches": [
             {
@@ -457,7 +457,7 @@
               "EndOffset": 485,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 36,
@@ -465,27 +465,27 @@
               "EndOffset": 567,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         },
         "System.Void FakeOmmerce.Models.FilterParameters::.ctor(System.Collections.Generic.List`1<System.String>,System.String,System.String,System.Double,System.Double)": {
           "Lines": {
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0,
-            "20": 0,
-            "21": 0,
-            "22": 0,
-            "23": 0
+            "16": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.FilterParameters::.ctor()": {
           "Lines": {
-            "25": 0,
-            "26": 0
+            "25": 1,
+            "26": 2
           },
           "Branches": []
         }
@@ -495,34 +495,34 @@
       "FakeOmmerce.Models.MongoEntity": {
         "MongoDB.Bson.ObjectId FakeOmmerce.Models.MongoEntity::get_InternalId()": {
           "Lines": {
-            "15": 0
+            "15": 5
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.MongoEntity::set_InternalId(MongoDB.Bson.ObjectId)": {
           "Lines": {
-            "17": 0,
-            "18": 0,
-            "19": 0,
-            "20": 0
+            "17": 7,
+            "18": 7,
+            "19": 7,
+            "20": 7
           },
           "Branches": []
         },
         "System.String FakeOmmerce.Models.MongoEntity::get_Id()": {
           "Lines": {
-            "25": 0
+            "25": 2
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.MongoEntity::set_Id(System.String)": {
           "Lines": {
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0
+            "27": 3,
+            "28": 3,
+            "29": 1,
+            "30": 1,
+            "32": 2,
+            "33": 2,
+            "34": 2
           },
           "Branches": [
             {
@@ -531,27 +531,27 @@
               "EndOffset": 14,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 28,
               "Offset": 12,
-              "EndOffset": 37,
+              "EndOffset": 32,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             }
           ]
         },
         "System.Boolean FakeOmmerce.Models.MongoEntity::IsValidObjId(System.String)": {
           "Lines": {
-            "51": 0,
-            "52": 0,
-            "53": 0,
-            "54": 0,
-            "55": 0,
-            "58": 0,
-            "59": 0
+            "51": 7,
+            "52": 7,
+            "53": 7,
+            "54": 3,
+            "55": 3,
+            "58": 4,
+            "59": 7
           },
           "Branches": [
             {
@@ -560,7 +560,7 @@
               "EndOffset": 18,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 3
             },
             {
               "Line": 53,
@@ -568,18 +568,18 @@
               "EndOffset": 23,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 4
             }
           ]
         },
         "MongoDB.Bson.ObjectId FakeOmmerce.Models.MongoEntity::ValidateAndParseObjId(System.String)": {
           "Lines": {
-            "62": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "68": 0,
-            "69": 0
+            "62": 2,
+            "63": 2,
+            "64": 1,
+            "65": 1,
+            "68": 1,
+            "69": 1
           },
           "Branches": [
             {
@@ -588,7 +588,7 @@
               "EndOffset": 14,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 63,
@@ -596,32 +596,32 @@
               "EndOffset": 32,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         },
         "System.Void FakeOmmerce.Models.MongoEntity::.ctor(System.String)": {
           "Lines": {
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "40": 0
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.MongoEntity::.ctor(MongoDB.Bson.ObjectId)": {
           "Lines": {
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "45": 0
+            "42": 5,
+            "43": 5,
+            "44": 5,
+            "45": 5
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.MongoEntity::.ctor()": {
           "Lines": {
-            "47": 14,
-            "48": 28
+            "47": 19,
+            "48": 38
           },
           "Branches": []
         }
@@ -631,24 +631,24 @@
       "FakeOmmerce.Models.Product": {
         "System.String FakeOmmerce.Models.Product::get_Name()": {
           "Lines": {
-            "20": 10
+            "20": 20
           },
           "Branches": []
         },
         "System.Double FakeOmmerce.Models.Product::get_Price()": {
           "Lines": {
-            "24": 1
+            "24": 6
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.Product::set_Price(System.Double)": {
           "Lines": {
-            "26": 2,
-            "27": 2,
+            "26": 6,
+            "27": 6,
             "28": 1,
             "29": 1,
-            "32": 1,
-            "33": 1
+            "32": 5,
+            "33": 5
           },
           "Branches": [
             {
@@ -665,36 +665,36 @@
               "EndOffset": 29,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 1
+              "Hits": 5
             }
           ]
         },
         "System.String FakeOmmerce.Models.Product::get_Brand()": {
           "Lines": {
-            "36": 2
+            "36": 11
           },
           "Branches": []
         },
         "System.String FakeOmmerce.Models.Product::get_Description()": {
           "Lines": {
-            "38": 0
+            "38": 11
           },
           "Branches": []
         },
         "System.Collections.Generic.HashSet`1<System.String> FakeOmmerce.Models.Product::get_Images()": {
           "Lines": {
-            "42": 1
+            "42": 7
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.Product::set_Images(System.Collections.Generic.HashSet`1<System.String>)": {
           "Lines": {
-            "44": 4,
-            "45": 4,
+            "44": 9,
+            "45": 9,
             "46": 1,
             "47": 1,
-            "50": 1,
-            "51": 1
+            "50": 6,
+            "51": 6
           },
           "Branches": [
             {
@@ -711,29 +711,29 @@
               "EndOffset": 27,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 1
+              "Hits": 6
             }
           ]
         },
         "System.Collections.Generic.HashSet`1<System.String> FakeOmmerce.Models.Product::get_Categories()": {
           "Lines": {
-            "57": 1
+            "57": 6
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.Product::set_Categories(System.Collections.Generic.HashSet`1<System.String>)": {
           "Lines": {
-            "59": 2,
-            "60": 2,
+            "59": 6,
+            "60": 6,
             "61": 1,
             "62": 1,
-            "65": 1,
-            "66": 9,
-            "67": 3,
-            "68": 3,
-            "69": 3,
-            "71": 1,
-            "72": 1
+            "65": 5,
+            "66": 29,
+            "67": 7,
+            "68": 7,
+            "69": 7,
+            "71": 5,
+            "72": 5
           },
           "Branches": [
             {
@@ -750,7 +750,7 @@
               "EndOffset": 27,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 1
+              "Hits": 5
             },
             {
               "Line": 66,
@@ -758,7 +758,7 @@
               "EndOffset": 43,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 3
+              "Hits": 7
             },
             {
               "Line": 66,
@@ -766,21 +766,21 @@
               "EndOffset": 76,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 1
+              "Hits": 5
             }
           ]
         },
         "System.Boolean FakeOmmerce.Models.Product::isValidCategories(System.Collections.Generic.HashSet`1<System.String>)": {
           "Lines": {
-            "118": 2,
-            "119": 15,
-            "120": 5,
-            "121": 5,
+            "118": 6,
+            "119": 35,
+            "120": 9,
+            "121": 9,
             "122": 1,
             "123": 1,
-            "125": 4,
-            "126": 1,
-            "127": 2
+            "125": 8,
+            "126": 5,
+            "127": 6
           },
           "Branches": [
             {
@@ -789,7 +789,7 @@
               "EndOffset": 11,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 5
+              "Hits": 9
             },
             {
               "Line": 121,
@@ -805,7 +805,7 @@
               "EndOffset": 47,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 4
+              "Hits": 8
             },
             {
               "Line": 119,
@@ -813,40 +813,40 @@
               "EndOffset": 57,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 1
+              "Hits": 5
             }
           ]
         },
         "System.Boolean FakeOmmerce.Models.Product::isValidImages(System.Collections.Generic.HashSet`1<System.String>)": {
           "Lines": {
-            "129": 4,
-            "130": 4,
-            "131": 0,
-            "132": 0,
-            "135": 35,
-            "136": 13,
-            "137": 13,
-            "140": 13,
-            "141": 13,
-            "142": 12,
-            "143": 12,
-            "145": 12,
-            "146": 11,
-            "147": 11,
-            "148": 11,
-            "149": 11,
-            "150": 11,
-            "151": 11,
+            "129": 9,
+            "130": 9,
+            "131": 3,
+            "132": 3,
+            "135": 45,
+            "136": 15,
+            "137": 15,
+            "140": 15,
+            "141": 15,
+            "142": 14,
+            "143": 14,
+            "145": 14,
+            "146": 13,
+            "147": 13,
+            "148": 13,
+            "149": 13,
+            "150": 13,
+            "151": 13,
             "152": 2,
             "153": 2,
             "154": 2,
-            "157": 11,
-            "158": 10,
-            "159": 10,
+            "157": 13,
+            "158": 12,
+            "159": 12,
             "162": 1,
             "163": 1,
-            "167": 1,
-            "168": 2
+            "167": 3,
+            "168": 7
           },
           "Branches": [
             {
@@ -855,7 +855,7 @@
               "EndOffset": 14,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 3
             },
             {
               "Line": 130,
@@ -863,7 +863,7 @@
               "EndOffset": 22,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 4
+              "Hits": 6
             },
             {
               "Line": 135,
@@ -871,7 +871,7 @@
               "EndOffset": 32,
               "Path": 1,
               "Ordinal": 9,
-              "Hits": 13
+              "Hits": 15
             },
             {
               "Line": 142,
@@ -879,7 +879,7 @@
               "EndOffset": 68,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 12
+              "Hits": 14
             },
             {
               "Line": 146,
@@ -887,7 +887,7 @@
               "EndOffset": 89,
               "Path": 0,
               "Ordinal": 4,
-              "Hits": 11
+              "Hits": 13
             },
             {
               "Line": 146,
@@ -895,7 +895,7 @@
               "EndOffset": 100,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 11
+              "Hits": 13
             },
             {
               "Line": 142,
@@ -903,7 +903,7 @@
               "EndOffset": 101,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 11
+              "Hits": 13
             },
             {
               "Line": 157,
@@ -911,7 +911,7 @@
               "EndOffset": 146,
               "Path": 0,
               "Ordinal": 6,
-              "Hits": 10
+              "Hits": 12
             },
             {
               "Line": 157,
@@ -927,33 +927,33 @@
               "EndOffset": 166,
               "Path": 0,
               "Ordinal": 8,
-              "Hits": 1
+              "Hits": 3
             }
           ]
         },
         "System.String FakeOmmerce.Models.Product::capitalizeStrings(System.String)": {
           "Lines": {
-            "170": 9,
-            "171": 9,
-            "173": 9,
-            "174": 9,
-            "175": 9,
+            "170": 22,
+            "171": 22,
+            "173": 22,
+            "174": 22,
+            "175": 22,
             "176": 5,
             "177": 5,
             "178": 5,
-            "179": 9,
-            "183": 186,
-            "184": 84,
-            "185": 84,
-            "186": 12,
-            "187": 12,
+            "179": 22,
+            "183": 434,
+            "184": 195,
+            "185": 195,
+            "186": 25,
+            "187": 25,
             "188": 7,
             "189": 7,
             "190": 7,
-            "191": 12,
-            "192": 84,
-            "193": 9,
-            "194": 9
+            "191": 25,
+            "192": 195,
+            "193": 22,
+            "194": 22
           },
           "Branches": [
             {
@@ -962,7 +962,7 @@
               "EndOffset": 21,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 9
+              "Hits": 22
             },
             {
               "Line": 175,
@@ -978,7 +978,7 @@
               "EndOffset": 47,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 9
+              "Hits": 22
             },
             {
               "Line": 173,
@@ -986,7 +986,7 @@
               "EndOffset": 48,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 9
+              "Hits": 22
             },
             {
               "Line": 183,
@@ -994,7 +994,7 @@
               "EndOffset": 52,
               "Path": 1,
               "Ordinal": 9,
-              "Hits": 84
+              "Hits": 195
             },
             {
               "Line": 185,
@@ -1002,7 +1002,7 @@
               "EndOffset": 68,
               "Path": 0,
               "Ordinal": 4,
-              "Hits": 12
+              "Hits": 25
             },
             {
               "Line": 187,
@@ -1018,7 +1018,7 @@
               "EndOffset": 96,
               "Path": 1,
               "Ordinal": 7,
-              "Hits": 12
+              "Hits": 25
             },
             {
               "Line": 185,
@@ -1026,7 +1026,7 @@
               "EndOffset": 97,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 84
+              "Hits": 195
             },
             {
               "Line": 183,
@@ -1034,7 +1034,7 @@
               "EndOffset": 114,
               "Path": 0,
               "Ordinal": 8,
-              "Hits": 9
+              "Hits": 22
             }
           ]
         },
@@ -1049,44 +1049,44 @@
         },
         "System.Int32 FakeOmmerce.Models.Product::GetHashCode()": {
           "Lines": {
-            "202": 0,
-            "203": 0,
-            "204": 0
+            "202": 1,
+            "203": 1,
+            "204": 1
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.Product::.ctor()": {
           "Lines": {
-            "75": 14,
-            "76": 28
+            "75": 17,
+            "76": 34
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.Product::.ctor(MongoDB.Bson.ObjectId,System.String,System.Collections.Generic.HashSet`1<System.String>,System.Collections.Generic.HashSet`1<System.String>,System.Double,System.String,System.String)": {
           "Lines": {
-            "86": 0,
-            "87": 0,
-            "88": 0,
-            "89": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "93": 0,
-            "94": 0
+            "86": 1,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1,
+            "91": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Models.Product::.ctor(FakeOmmerce.Models.ProductDTO)": {
           "Lines": {
-            "96": 0,
-            "97": 0,
-            "98": 0,
-            "99": 0,
-            "100": 0,
-            "101": 0,
-            "102": 0,
-            "103": 0,
-            "104": 0
+            "96": 2,
+            "97": 2,
+            "98": 2,
+            "99": 2,
+            "100": 2,
+            "101": 2,
+            "102": 2,
+            "103": 2,
+            "104": 2
           },
           "Branches": [
             {
@@ -1095,7 +1095,7 @@
               "EndOffset": 79,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 102,
@@ -1103,21 +1103,21 @@
               "EndOffset": 86,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         },
         "System.Void FakeOmmerce.Models.Product::.ctor(MongoDB.Bson.ObjectId,FakeOmmerce.Models.ProductDTO)": {
           "Lines": {
-            "106": 0,
-            "107": 0,
-            "108": 0,
-            "109": 0,
-            "110": 0,
-            "111": 0,
-            "112": 0,
-            "113": 0,
-            "114": 0
+            "106": 2,
+            "107": 2,
+            "108": 2,
+            "109": 2,
+            "110": 2,
+            "111": 2,
+            "112": 2,
+            "113": 2,
+            "114": 2
           },
           "Branches": [
             {
@@ -1134,7 +1134,7 @@
               "EndOffset": 82,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             }
           ]
         }
@@ -1144,43 +1144,43 @@
       "FakeOmmerce.Models.ProductDTO": {
         "System.String FakeOmmerce.Models.ProductDTO::get_Id()": {
           "Lines": {
-            "8": 0
+            "8": 2
           },
           "Branches": []
         },
         "System.String FakeOmmerce.Models.ProductDTO::get_Name()": {
           "Lines": {
-            "11": 0
+            "11": 10
           },
           "Branches": []
         },
         "System.Double FakeOmmerce.Models.ProductDTO::get_Price()": {
           "Lines": {
-            "14": 0
+            "14": 10
           },
           "Branches": []
         },
         "System.String FakeOmmerce.Models.ProductDTO::get_Brand()": {
           "Lines": {
-            "17": 0
+            "17": 10
           },
           "Branches": []
         },
         "System.String FakeOmmerce.Models.ProductDTO::get_Description()": {
           "Lines": {
-            "19": 0
+            "19": 10
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<System.String> FakeOmmerce.Models.ProductDTO::get_Categories()": {
           "Lines": {
-            "22": 0
+            "22": 10
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<System.String> FakeOmmerce.Models.ProductDTO::get_Images()": {
           "Lines": {
-            "24": 0
+            "24": 13
           },
           "Branches": []
         }
@@ -1190,9 +1190,9 @@
       "FakeOmmerce.Errors.BadRequestException": {
         "System.Void FakeOmmerce.Errors.BadRequestException::.ctor(System.String)": {
           "Lines": {
-            "7": 3,
-            "8": 3,
-            "10": 3
+            "7": 5,
+            "8": 5,
+            "10": 5
           },
           "Branches": []
         }
@@ -1226,19 +1226,19 @@
       "FakeOmmerce.Errors.HttpError": {
         "System.Object FakeOmmerce.Errors.HttpError::get_HttpErrorResponse()": {
           "Lines": {
-            "8": 5
+            "8": 7
           },
           "Branches": []
         },
         "System.Void FakeOmmerce.Errors.HttpError::.ctor(System.String,System.Net.HttpStatusCode)": {
           "Lines": {
-            "10": 5,
-            "11": 5,
-            "12": 5,
-            "13": 5,
-            "14": 5,
-            "15": 5,
-            "16": 5
+            "10": 7,
+            "11": 7,
+            "12": 7,
+            "13": 7,
+            "14": 7,
+            "15": 7,
+            "16": 7
           },
           "Branches": []
         }
