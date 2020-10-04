@@ -250,55 +250,55 @@ FNH:0
 end_of_record
 SF:/home/andrepostiga/MyProjects/FakeOmmerce-api/FakeOmmerceAPI/src/Models/MongoEntity.cs
 FN:14,MongoDB.Bson.ObjectId FakeOmmerce.Models.MongoEntity::get_InternalId()
-FNDA:3,MongoDB.Bson.ObjectId FakeOmmerce.Models.MongoEntity::get_InternalId()
-DA:15,3
+FNDA:5,MongoDB.Bson.ObjectId FakeOmmerce.Models.MongoEntity::get_InternalId()
+DA:15,5
 FN:16,System.Void FakeOmmerce.Models.MongoEntity::set_InternalId(MongoDB.Bson.ObjectId)
-FNDA:5,System.Void FakeOmmerce.Models.MongoEntity::set_InternalId(MongoDB.Bson.ObjectId)
-DA:17,5
-DA:18,5
-DA:19,5
-DA:20,5
+FNDA:7,System.Void FakeOmmerce.Models.MongoEntity::set_InternalId(MongoDB.Bson.ObjectId)
+DA:17,7
+DA:18,7
+DA:19,7
+DA:20,7
 FN:24,System.String FakeOmmerce.Models.MongoEntity::get_Id()
-FNDA:0,System.String FakeOmmerce.Models.MongoEntity::get_Id()
-DA:25,0
+FNDA:2,System.String FakeOmmerce.Models.MongoEntity::get_Id()
+DA:25,2
 FN:26,System.Void FakeOmmerce.Models.MongoEntity::set_Id(System.String)
-FNDA:0,System.Void FakeOmmerce.Models.MongoEntity::set_Id(System.String)
-DA:27,0
-DA:28,0
-DA:29,0
-DA:30,0
-DA:32,0
-DA:33,0
-DA:34,0
-BRDA:28,12,0,0
-BRDA:28,12,1,0
+FNDA:3,System.Void FakeOmmerce.Models.MongoEntity::set_Id(System.String)
+DA:27,3
+DA:28,3
+DA:29,1
+DA:30,1
+DA:32,2
+DA:33,2
+DA:34,2
+BRDA:28,12,0,1
+BRDA:28,12,1,2
 FN:50,System.Boolean FakeOmmerce.Models.MongoEntity::IsValidObjId(System.String)
-FNDA:0,System.Boolean FakeOmmerce.Models.MongoEntity::IsValidObjId(System.String)
-DA:51,0
-DA:52,0
-DA:53,0
-DA:54,0
-DA:55,0
-DA:58,0
-DA:59,0
-BRDA:53,16,0,0
-BRDA:53,16,1,0
+FNDA:7,System.Boolean FakeOmmerce.Models.MongoEntity::IsValidObjId(System.String)
+DA:51,7
+DA:52,7
+DA:53,7
+DA:54,3
+DA:55,3
+DA:58,4
+DA:59,7
+BRDA:53,16,0,3
+BRDA:53,16,1,4
 FN:61,MongoDB.Bson.ObjectId FakeOmmerce.Models.MongoEntity::ValidateAndParseObjId(System.String)
-FNDA:0,MongoDB.Bson.ObjectId FakeOmmerce.Models.MongoEntity::ValidateAndParseObjId(System.String)
-DA:62,0
-DA:63,0
-DA:64,0
-DA:65,0
-DA:68,0
-DA:69,0
-BRDA:63,12,0,0
-BRDA:63,12,1,0
+FNDA:2,MongoDB.Bson.ObjectId FakeOmmerce.Models.MongoEntity::ValidateAndParseObjId(System.String)
+DA:62,2
+DA:63,2
+DA:64,1
+DA:65,1
+DA:68,1
+DA:69,1
+BRDA:63,12,0,1
+BRDA:63,12,1,1
 FN:36,System.Void FakeOmmerce.Models.MongoEntity::.ctor(System.String)
-FNDA:0,System.Void FakeOmmerce.Models.MongoEntity::.ctor(System.String)
-DA:37,0
-DA:38,0
-DA:39,0
-DA:40,0
+FNDA:1,System.Void FakeOmmerce.Models.MongoEntity::.ctor(System.String)
+DA:37,1
+DA:38,1
+DA:39,1
+DA:40,1
 FN:41,System.Void FakeOmmerce.Models.MongoEntity::.ctor(MongoDB.Bson.ObjectId)
 FNDA:5,System.Void FakeOmmerce.Models.MongoEntity::.ctor(MongoDB.Bson.ObjectId)
 DA:42,5
@@ -306,15 +306,15 @@ DA:43,5
 DA:44,5
 DA:45,5
 FN:46,System.Void FakeOmmerce.Models.MongoEntity::.ctor()
-FNDA:17,System.Void FakeOmmerce.Models.MongoEntity::.ctor()
-DA:47,17
-DA:48,34
+FNDA:19,System.Void FakeOmmerce.Models.MongoEntity::.ctor()
+DA:47,19
+DA:48,38
 LF:36
-LH:11
+LH:36
 BRF:6
-BRH:0
+BRH:6
 FNF:9
-FNH:4
+FNH:9
 end_of_record
 SF:/home/andrepostiga/MyProjects/FakeOmmerce-api/FakeOmmerceAPI/src/Models/Product.cs
 FN:19,System.String FakeOmmerce.Models.Product::get_Name()
@@ -550,10 +550,10 @@ FNH:6
 end_of_record
 SF:/home/andrepostiga/MyProjects/FakeOmmerce-api/FakeOmmerceAPI/src/Errors/BadRequestException.cs
 FN:6,System.Void FakeOmmerce.Errors.BadRequestException::.ctor(System.String)
-FNDA:3,System.Void FakeOmmerce.Errors.BadRequestException::.ctor(System.String)
-DA:7,3
-DA:8,3
-DA:10,3
+FNDA:5,System.Void FakeOmmerce.Errors.BadRequestException::.ctor(System.String)
+DA:7,5
+DA:8,5
+DA:10,5
 LF:3
 LH:3
 BRF:0
@@ -589,17 +589,17 @@ FNH:0
 end_of_record
 SF:/home/andrepostiga/MyProjects/FakeOmmerce-api/FakeOmmerceAPI/src/Errors/HttpError.cs
 FN:7,System.Object FakeOmmerce.Errors.HttpError::get_HttpErrorResponse()
-FNDA:5,System.Object FakeOmmerce.Errors.HttpError::get_HttpErrorResponse()
-DA:8,5
+FNDA:7,System.Object FakeOmmerce.Errors.HttpError::get_HttpErrorResponse()
+DA:8,7
 FN:9,System.Void FakeOmmerce.Errors.HttpError::.ctor(System.String,System.Net.HttpStatusCode)
-FNDA:5,System.Void FakeOmmerce.Errors.HttpError::.ctor(System.String,System.Net.HttpStatusCode)
-DA:10,5
-DA:11,5
-DA:12,5
-DA:13,5
-DA:14,5
-DA:15,5
-DA:16,5
+FNDA:7,System.Void FakeOmmerce.Errors.HttpError::.ctor(System.String,System.Net.HttpStatusCode)
+DA:10,7
+DA:11,7
+DA:12,7
+DA:13,7
+DA:14,7
+DA:15,7
+DA:16,7
 LF:8
 LH:8
 BRF:0

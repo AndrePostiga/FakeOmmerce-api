@@ -27,7 +27,7 @@ namespace FakeOmmerce.Models
             {
                 if (!MongoEntity.IsValidObjId(value))
                 {
-                    throw new BadRequestException($@"id: {id}");
+                    throw new BadRequestException($@"id: {value}");
                 }
                 InternalId = ObjectId.Parse(value);
                 id = value;
@@ -62,7 +62,7 @@ namespace FakeOmmerce.Models
         {
             if (!MongoEntity.IsValidObjId(id))
             {
-                throw new BadRequestException($@"id {id}");
+                throw new BadRequestException($@"id: {id}");
             }
 
             return ObjectId.Parse(id);
