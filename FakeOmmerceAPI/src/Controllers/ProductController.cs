@@ -114,11 +114,6 @@ namespace FakeOmmerce.Controllers
         [Route("{id}")]
         public async Task<ActionResult<Product>> Put(string id, [FromBody] ProductDTO dto)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             try
             {
                 var objId = MongoEntity.ValidateAndParseObjId(id);
